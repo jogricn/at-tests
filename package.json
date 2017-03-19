@@ -1,0 +1,24 @@
+{
+  "name": "attesting",
+  "version": "0.0.1",
+  "description": "attesting =========",
+  "main": "test-runner.js",
+  "dependencies": {
+    "async": "~0.2.x",
+    "nodemailer": "~0.6.0"
+  },
+  "devDependencies": {
+    "minimist": "0.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://mileticn@bitbucket.org/mileticn/attesting.git"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "author": "Nebojsa Miletic"
+}
