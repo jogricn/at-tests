@@ -19,7 +19,7 @@ if (argv.recepients === 'all') {
 } else if (argv.recepients === 'dev') {
   recepients = process.env.REPORT_RECEPIENTS_DEV.split('|');
 } else if (argv.recepients === 'njogric') {
-  recepients = process.env.REPORT_RECEPIENTS_NJ.split('|');
+  recepients = 'nebojsajogric+attesting@gmail.com';
 } else if (argv.recepients === 'nmiletic') {
   recepients = process.env.REPORT_RECEPIENTS_NM.split('|');
 } else if (argv.recepients === 'none') {
