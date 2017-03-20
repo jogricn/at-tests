@@ -1,1 +1,1 @@
-worker: node test-runner.js --recepients=dev
+worker: node test-runner.js --recepients=njogric
