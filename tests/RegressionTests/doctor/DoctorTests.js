@@ -34,7 +34,7 @@ casper.test.begin("Doctor with multiple clinics test - Deniz Güvencer", functio
 
     test.assertVisible('div.ratings > div:nth-child(2) > div.rating.rating-5', '  - "Behandlung" Rating is 5!!!');
     test.assertVisible('div.ratings > div:nth-child(3) > div.rating.rating-4', '  - "Wartezeit" Rating is 4!!!');
-    test.assertVisible('div.ratings > div:nth-child(4) > div.rating.rating-5', '  - "Gesamtbewertung" Rating is 5!!!');
+test.assertVisible('div.ratings > div:nth-child(4) > div.rating.rating-5', '  - "Gesamtbewertung" Rating is 5!!!');
   })
 
   casper.then(function() {
@@ -85,9 +85,9 @@ casper.test.begin("Doctor with multiple rating reviews test - Dr. Walter Effenbe
     
     checkRatingElements(test);
 
-    test.assertVisible('div.ratings > div:nth-child(2) > div.rating.rating-4', '  - "Behandlung" Rating is 5!!!');
+    test.assertVisible('div.ratings > div:nth-child(2) > div.rating.rating-5', '  - "Behandlung" Rating is 5!!!');
     test.assertVisible('div.ratings > div:nth-child(3) > div.rating.rating-4', '  - "Wartezeit" Rating is 4!!!');
-    test.assertVisible('div.ratings > div:nth-child(4) > div.rating.rating-4', '  - "Gesamtbewertung" Rating is 5!!!');
+test.assertVisible('div.ratings > div:nth-child(4) > div.rating.rating-5', '  - "Gesamtbewertung" Rating is 5!!!');
   })
 
   casper.then(function() {

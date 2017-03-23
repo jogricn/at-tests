@@ -19,7 +19,7 @@ function getDoctorClinicsLinks () {
 checkDefaultDoctorPageElements = function checkDefaultDoctorPageElements(test) {
   test.assertVisible('.breadcrumbs', 'Breadcrumbs are visible.');
   test.assertVisible('h1', 'Doctor name is visible');
-  test.assertVisible('div.headline.justified-blocks > div', 'Doctor phone number is visible');
+  test.assertVisible('div.headline div[itemprop="telephone"]', 'Doctor phone number is visible');
   test.assertVisible('.insurance-selector', 'Insurance selector is visible');
   test.assertVisible('a.insurance-selector-button.public', '  - Public insurance selector is visible.');
   test.assertVisible('a.insurance-selector-button.private', '  - Private insurance selector is visible.');
@@ -28,9 +28,9 @@ checkDefaultDoctorPageElements = function checkDefaultDoctorPageElements(test) {
 checkRatingElements = function checkRatingElements(test) {
   test.assertVisible('div.ratings', 'Ratings element is visible!');
 
-  test.assertVisible('div.ratings > div:nth-child(2)', '  - "Behandlung" rating element is visible!');
-  test.assertVisible('div.ratings > div:nth-child(3)', '  - "Wartezeit" rating element is visible!');
-  test.assertVisible('div.ratings > div:nth-child(4)', '  - "Gesamtbewertung" rating element is visible!');
+  test.assertVisible('div.ratings > div:nth-child(1) > div.rating-name', '  - "Behandlung" rating element is visible!');
+  test.assertVisible('div.ratings > div:nth-child(2) > div.rating-name', '  - "Wartezeit" rating element is visible!');
+  test.assertVisible('div.ratings > div:nth-child(3) > div.rating-name', '  - "Gesamtbewertung" rating element is visible!');
 }
 
 checkDoctorCalendars = function checkDoctorCalendars(test) {

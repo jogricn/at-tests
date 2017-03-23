@@ -88,28 +88,28 @@ casper.test.begin("Clinics with multiple doctors test", function suite(test){
 
   casper.then(function() {
     var clinicDoctorsArray = this.evaluate(getClinicDoctors);
-    if (clinicDoctorsArray.length > 2) {
+    if (clinicDoctorsArray.length >= 2) {
       test.assert(true, 'Number of the doctors is Ok! There is ' + clinicDoctorsArray.length + ' doctors.');
     } else {
-      test.assert(false, 'Something is wrong with a number of the doctors!!!');
+      test.assert(false, 'Something is wrong with a number of the doctors!!! Count : ' + clinicDoctorsArray.length);
     };
   })
 
   casper.then(function() {
     var clinicDoctorsLinksArray = this.evaluate(getClinicDoctorLinks);
-    if (clinicDoctorsLinksArray.length > 2) {
+    if (clinicDoctorsLinksArray.length >= 2) {
       test.assert(true, 'Number of the doctors LINKS is Ok! There is ' + clinicDoctorsLinksArray.length + ' doctors links.');
     } else {
-      test.assert(false, 'Something is wrong with number of the doctors LINKS!!!');
+      test.assert(false, 'Something is wrong with number of the doctors LINKS!!! Count : ' + clinicDoctorsLinksArray.length);
     };
   })
 
   casper.then(function() {
     var clinicDoctorsCalendarsArray = this.evaluate(getClinicDoctorsCalendars);
-    if (clinicDoctorsCalendarsArray.length > 2) {
+    if (clinicDoctorsCalendarsArray.length >= 2) {
       test.assert(true, 'Number of the doctors CALENDARS is Ok! There is ' + clinicDoctorsCalendarsArray.length + ' calendars.');
     } else {
-      test.assert(false, 'Something is wrong with number of the doctors CALENDARS!!!');
+      test.assert(false, 'Something is wrong with number of the doctors CALENDARS!!! Count : ' + clinicDoctorsCalendarsArray.length);
     };
   })
 
