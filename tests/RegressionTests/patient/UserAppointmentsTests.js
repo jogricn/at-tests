@@ -10,7 +10,7 @@ var APPOINTMENT_BOOKING_DOCTOR;
 
 var BASE_SITE_URL = "https://www.arzttermine.de";
 
-var FIRST_DOCTOR_NAME_LINK = 'section.result:nth-child(1) > div:nth-child(1) > header:nth-child(1) > div:nth-child(2) > h2:nth-child(1) > span:nth-child(1) > a:nth-child(1)';
+var FIRST_DOCTOR_NAME_LINK = '#providers section.result header .title h2.name span a:first-of-type';
 
 FIRST_APPOINTMENT = "#upcoming_bookings_container > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(5) > input.btn_gray_new:nth-child(1)";
 SECUND_APPOINTMENT = "#upcoming_bookings_container > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(5) > input:nth-child(1)";
@@ -37,9 +37,10 @@ casper.test.begin("Test - Default User make an appointment", function suite(test
     // var selectedOption = 'Berlin';
     // // In Search form set Berlin in Location combo box
     // secondCombo.value = selectedOption;   
+    casper.sendKeys(casper.TOWN_OR_POSTCODE_TEXT_INPUT, "Berlin");
     
     // Click on the "Termin finden" button
-    this.click(casper.TERMIN_FINDEN_BUTTON);
+    this.click(casper.SEARCH_BUTTON);
     casper.echo("<<<--- CLIK ON THE SEARCH BUTTON --->>>");
 
     // When the number of search results becomes visible, open first doctor and 
