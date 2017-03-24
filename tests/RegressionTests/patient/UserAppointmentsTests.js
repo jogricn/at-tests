@@ -1,4 +1,4 @@
-//require("./../../../helper.js");
+require("./../../../helper.js");
 require('./../../helper_methods/patient.js');
 require('./../../helper_methods/doctors.js');
 
@@ -36,8 +36,8 @@ casper.test.begin("Test - Default User make an appointment", function suite(test
     // var secondCombo = document.getElementsByClassName ( "#form_location" );
     // var selectedOption = 'Berlin';
     // // In Search form set Berlin in Location combo box
-    // secondCombo.value = selectedOption;   
-    casper.sendKeys(casper.TOWN_OR_POSTCODE_TEXT_INPUT, "Berlin");
+    // secondCombo.value = selectedOption;  
+    casper.sendKeys(casper.TOWN_OR_POSTCODE_TEXT_INPUT, "Berlin"); 
     
     // Click on the "Termin finden" button
     this.click(casper.SEARCH_BUTTON);

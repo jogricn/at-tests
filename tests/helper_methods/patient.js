@@ -163,20 +163,24 @@ casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(do
   
   // Fill form elements (First name, Last name, email address, phone number)
   casper.fill('#booking-form', {
-    'form[first_name]': 'TestNebojsa',
-    'form[last_name]': 'TestJogric',
-    'form[email]': 'nebojsajogric+arztterminetest@gmail.com',
+    'form[first_name]': 'Test-Thomas',
+    'form[last_name]': 'Test-Hillard',
+    'form[email]': 'testgroup@arzttermine.de',
     'form[phone]': '+381604536787'
   }, false);
 
-  casper.click('div.right-align:nth-child(6) > button:nth-child(1)');
+  casper.echo("    - In First name field type 'Test-Thomas'");
+  casper.echo("    - In Last name field type 'Test-Hillard'");
+  casper.echo("    - In Email field type 'testgroup@arzttermine.de'");
+
+  casper.click('#booking-form #step-1 .button-wrapper button');
   casper.echo("<<<--- CLIK ON WEITER BUTTON --->>>");
 
   casper.wait(2000);
 
   var secondCombo = document.getElementsByClassName ("#filter-treatment");
-  var selectedOption = 'Akute Zahnschmerzen';
-    // In 'Behandlungsgrund' box set 'Akute Zahnschmerzen' value
+  var selectedOption = 'Sonstige';
+    // In 'Behandlungsgrund' box set 'Sonstige' value
   secondCombo.value = selectedOption;
 
   // For "Waren Sie bereits Patient/in bei Dr. Patrick Prinz?" click on "Ja" radio button
