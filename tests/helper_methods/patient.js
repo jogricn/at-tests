@@ -165,8 +165,8 @@ casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(do
   casper.fill('#booking-form', {
     'form[first_name]': 'Test-Thomas',
     'form[last_name]': 'Test-Hillard',
-    'form[email]': 'testgroup@arzttermine.de',
-    'form[phone]': '+381604536787'
+    'form[email]': 'nebojsajogric+attesting@gmail.com',
+    'form[phone]': ''
   }, false);
 
   casper.echo("    - In First name field type 'Test-Thomas'");
@@ -180,18 +180,18 @@ casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(do
 
   var secondCombo = document.getElementsByClassName ("#filter-treatment");
   var selectedOption = 'Sonstige';
-    // In 'Behandlungsgrund' box set 'Sonstige' value
+  casper.echo("In 'Behandlungsgrund' box set 'Sonstige' value")
   secondCombo.value = selectedOption;
 
-  // For "Waren Sie bereits Patient/in bei Dr. Patrick Prinz?" click on "Ja" radio button
+  casper.echo("For 'Waren Sie bereits Patient/in bei Dr. Patrick Prinz?' click on 'Ja' radio button")
   casper.click('#is-patient-1')
 
-  // Click on radio button 'I agree to my data being used to teach my appointment...'
+  casper.echo("Click on radio button 'I agree to my data being used to teach my appointment...'")
   casper.click('#checkbox-tos');
 
   if (doSubmit) {
-    this.test.assertVisible('div.right-align > button', 'Booking button is visible');
-    casper.click('#step-2 > div.right-align > button');
+    this.test.assertVisible('#step-2 .button-wrapper button[type="submit"]', 'Booking button is visible');
+    casper.click('#step-2 .button-wrapper button[type="submit"]');
     casper.echo("<<<--- CLIK ON 'Termin buchen!' BUTTON --->>>");
     casper.wait(3000, function() {
       casper.test.assertDoesntExist('.error', 'Ther is no errors.')  

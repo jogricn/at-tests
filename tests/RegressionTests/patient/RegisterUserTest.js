@@ -1,4 +1,4 @@
-require("./helper.js");
+require("../helper.js");
 
 casper.test.begin("Register new user tests", function suite(test){
   casper.start("http://arzttermine.de");
