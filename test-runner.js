@@ -13,15 +13,13 @@ var argv = parseArgs(process.argv.slice(2));
 
 var recepients = [];
 // Report recepients are defined as environment config variables. 
-// The format is: "nebojsajogric+attesting@gmail.com|nm+testing@arzttermine.de|th+testing@arzttermine.de";
+// The format is: "nebojsajogric+attesting@gmail.com|th+testing@arzttermine.de";
 if (argv.recepients === 'all') {
   recepients = process.env.REPORT_RECEPIENTS_ALL.split('|');
 } else if (argv.recepients === 'dev') {
   recepients = process.env.REPORT_RECEPIENTS_DEV.split('|');
 } else if (argv.recepients === 'njogric') {
   recepients = 'nebojsajogric+attesting@gmail.com';
-} else if (argv.recepients === 'nmiletic') {
-  recepients = process.env.REPORT_RECEPIENTS_NM.split('|');
 } else if (argv.recepients === 'none') {
   recepients = [];
 } 
@@ -49,9 +47,11 @@ if (testPath) {
     SMOKE_TESTS_PATH + 'telefondienst.js',
     
     REGRESION_TESTS_PATH + 'doctor/DoctorTests.js',
-    REGRESION_TESTS_PATH + 'doctor/RegistrationDoctorTests.js',
-    // // REGRESION_TESTS_PATH + 'patient/UserAppointmentsTests.js'
-    REGRESION_TESTS_PATH + 'patient/UserTests.js',
+    // REGRESION_TESTS_PATH + 'doctor/RegistrationDoctorTests.js',
+    // REGRESION_TESTS_PATH + 'patient/UserAppointmentsTests.js'
+    // REGRESION_TESTS_PATH + 'patient/UserTests.js',
+    REGRESION_TESTS_PATH + 'patient/UserAppointmentsTests.js',
+    // REGRESION_TESTS_PATH + 'patient/RegisterUserTest.js',
     REGRESION_TESTS_PATH + 'polyclinic/ClinicsTests.js',
     REGRESION_TESTS_PATH + 'social_networks/SocialNetworksTests.js',
     REGRESION_TESTS_PATH + 'widget/WidgetsTest.js'
