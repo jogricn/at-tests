@@ -137,7 +137,9 @@ casper.test.begin("Homepage basic tests", function suite(test){
 // casper.test.begin("Homepage resource test", function suite(test){
   
 //   casper.start().viewport(1200, 1000).thenOpen("http://arzttermine.de", function(){
+//     casper.wait(10000);
 //     casper.echo('=== Number of requested resources is ' + numberOfResources);
+
 //   });
 
 //   casper.then(function() {

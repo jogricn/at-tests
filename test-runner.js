@@ -41,14 +41,13 @@ if (testPath) {
   // We can do better, e.g. crawling of a specific directory, but this is ok for now.
   var tests = [
     SMOKE_TESTS_PATH + 'homepage.js',
-    SMOKE_TESTS_PATH + 'marketing.js',
+    // SMOKE_TESTS_PATH + 'marketing.js',
     SMOKE_TESTS_PATH + 'filterlinks.js',
     SMOKE_TESTS_PATH + 'searchpager.js',
-    SMOKE_TESTS_PATH + 'telefondienst.js',
+    // SMOKE_TESTS_PATH + 'telefondienst.js',
     
     REGRESION_TESTS_PATH + 'doctor/DoctorTests.js',
-    // REGRESION_TESTS_PATH + 'doctor/RegistrationDoctorTests.js',
-    // REGRESION_TESTS_PATH + 'patient/UserAppointmentsTests.js'
+    REGRESION_TESTS_PATH + 'doctor/RegistrationDoctorTests.js',
     // REGRESION_TESTS_PATH + 'patient/UserTests.js',
     REGRESION_TESTS_PATH + 'patient/UserAppointmentsTests.js',
     // REGRESION_TESTS_PATH + 'patient/RegisterUserTest.js',

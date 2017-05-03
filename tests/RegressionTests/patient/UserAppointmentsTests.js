@@ -70,7 +70,7 @@ casper.test.begin("Test - Default User make an appointment", function suite(test
   casper.then(function() {
     casper.fillAppointmentFormWithSubmit(true);
 
-    casper.capture('ZakazanTermin.png');
+    //casper.capture('ZakazanTermin.png');
 
     casper.waitForText('Ihre Buchung war erfolgreich', function() {
       test.assertVisible('#booking-confirmation', 'Bookint confirmation form is visible.')

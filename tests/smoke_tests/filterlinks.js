@@ -4,7 +4,7 @@ casper.test.begin("Search and Pager tests", function suite(test){
   
   // Checkpoint array of 'Berliner Zahnärzte(Stadtteile)' links which we expect be on web site
   // var cityLinks = ["/zahnarzt/berlin-charlottenburg", "/zahnarzt/berlin-friedrichshain", "/zahnarzt/berlin-kreuzberg", "/zahnarzt/berlin-lichtenberg", "/zahnarzt/berlin-mitte", "/zahnarzt/berlin-prenzlauer-berg", "/zahnarzt/berlin-Schoeneberg", "/zahnarzt/berlin-spandau", "/zahnarzt/berlin-steglitz", "/zahnarzt/berlin-tempelhof", "/zahnarzt/berlin-treptow", "/zahnarzt/berlin-wedding", "/zahnarzt/berlin-wilmersdorf", "/zahnarzt/berlin-zehlendorf"];
-  var cityLinks = ["/allgemeinarzt/berlin", "/zahnarzt/bremen", "/zahnarzt/dresden", "/zahnarzt/dortmund", "/zahnarzt/duesseldorf", "/zahnarzt/essen", "/frauenarzt/frankfurt", "/zahnarzt/hamburg","/zahnarzt/hannover", "/frauenarzt/koeln","/zahnarzt/leipzig", "/allgemeinarzt/muenchen", "/zahnarzt/nuernberg", "/zahnarzt/stuttgart","/internist/koblenz"];
+  var cityLinks = ["/berlin", "/bremen", "/dresden", "/dortmund", "/duesseldorf", "/essen", "/frankfurt", "/hamburg","/hannover", "/koeln","/leipzig", "/muenchen", "/nuernberg", "/stuttgart","/koblenz"];
   var links;
   var specialtiesLinks;
   var areTheSame = true;

@@ -41,7 +41,9 @@ var HEADER_TEL_LINK = ".phone-container > span:nth-child(1) > a:nth-child(1)";
 */
 casper.test.begin("Clinics with multiple doctors test", function suite(test){
  
-  casper.start('http://www.arzttermine.de/praxis/polikum-charlottenburg/gkv');
+  // casper.start('http://www.arzttermine.de/praxis/polikum-charlottenburg/gkv');
+  casper.start('https://www.arzttermine.de/praxis/triadent-berlin-mitte/gkv');
+
   casper.viewport(casper.at.VIEWPORT.width, casper.at.VIEWPORT.height);
 
   casper.then(function() {
@@ -51,16 +53,18 @@ casper.test.begin("Clinics with multiple doctors test", function suite(test){
 
   casper.then(function() {
     var openedClinicName = this.evaluate(getClinicName);
-    if (openedClinicName == 'Polikum Charlottenburg') {
-      test.assert(true, '"Polikum Charlottenburg" details page is opened.');	
+    // if (openedClinicName == 'Polikum Charlottenburg') {
+    if (openedClinicName == 'triadent Berlin Mitte') {
+
+      test.assert(true, '"triadent Berlin Mitte" details page is opened.');	
     }
   })
   
   casper.then(function() {
     test.assertVisible('div.headline.justified-blocks > div', 'Clinic phone number is visible');
     var openedClinickPhone = this.evaluate(getClinicPhone);
-    if (openedClinickPhone == '030-609 835149') {
-      test.assert(true, '  - "Polikum Charlottenburg" phone number is corect!');	
+    if (openedClinickPhone == '030/2000841268') {
+      test.assert(true, '  - "triadent Berlin Mitte" phone number is corect!');	
     }
   })
 
@@ -68,7 +72,7 @@ casper.test.begin("Clinics with multiple doctors test", function suite(test){
     test.assertVisible('.breadcrumbs', 'Breadcrumbs are visible.');
 
     var clinicBreadcrumbsArray  = this.evaluate(getClinicBreadcrumbs);
-    if (clinicBreadcrumbsArray.length > 2) {
+    if (clinicBreadcrumbsArray.length >= 1) {
       test.assert(true, '  - Breadcrumbs number is Ok! There is ' + clinicBreadcrumbsArray.length +  ' breadcrumbs.');
     } else {
       test.assert(false, 'Something is wrong with breadcrumbs!!!');

@@ -28,9 +28,9 @@ checkDefaultDoctorPageElements = function checkDefaultDoctorPageElements(test) {
 checkRatingElements = function checkRatingElements(test) {
   test.assertVisible('div.ratings', 'Ratings element is visible!');
 
-  test.assertVisible('div.ratings > div:nth-child(1) > div.rating-name', '  - "Behandlung" rating element is visible!');
-  test.assertVisible('div.ratings > div:nth-child(2) > div.rating-name', '  - "Wartezeit" rating element is visible!');
-  test.assertVisible('div.ratings > div:nth-child(3) > div.rating-name', '  - "Gesamtbewertung" rating element is visible!');
+  test.assertVisible('div.ratings div:nth-of-type(1) div.rating', '  - "Behandlung" Rating is 5!!!');
+    test.assertVisible('div.ratings div:nth-of-type(2) div.rating', '  - "Wartezeit" Rating is 4!!!');
+test.assertVisible('div.ratings div:nth-of-type(3) div.rating', '  - "Gesamtbewertung" Rating is 5!!!');
 }
 
 checkDoctorCalendars = function checkDoctorCalendars(test) {
