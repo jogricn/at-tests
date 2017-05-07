@@ -1,6 +1,6 @@
 {
   "name": "attesting",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "attesting =========",
   "main": "test-runner.js",
   "dependencies": {
@@ -18,7 +18,7 @@
     "url": "https://github.com/jogricn/at-tests.git"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "7.10.x"
   },
   "author": "Nebojsa Jogric"
 }
