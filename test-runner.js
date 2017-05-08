@@ -1,7 +1,7 @@
 var async = require("async");
 var fs = require('fs');
 var nodemailer = require("nodemailer");
-// var transport = nodemailer.createTransport("direct");
+//var transport = nodemailer.createTransport("direct"); - commented temporarily
 //var sys = require('util');
 var spawn = require('child_process').spawn;
 var parseArgs = require('minimist');
