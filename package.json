@@ -4,7 +4,7 @@
   "description": "attesting =========",
   "main": "test-runner.js",
   "dependencies": {
-    "async": "2.3.0",
+    "async": "2.4.0",
     "nodemailer": "4.0.1"
   },
   "devDependencies": {
