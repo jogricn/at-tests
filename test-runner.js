@@ -218,7 +218,7 @@ async.each(
   }, 
   function(err){
     // When all tests finish, generate a report.
-    report();
+    // report();
 
     if (err) {
       console.error("FAILURE: " + err);
