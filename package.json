@@ -4,11 +4,11 @@
   "description": "attesting =========",
   "main": "test-runner.js",
   "dependencies": {
-    "async": "~0.2.x",
-    "nodemailer": "~0.6.0"
+    "async": "2.3.0",
+    "nodemailer": "4.0.1"
   },
   "devDependencies": {
-    "minimist": "0.0.7"
+    "minimist": "1.2.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

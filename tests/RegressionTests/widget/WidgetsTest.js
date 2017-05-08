@@ -26,8 +26,8 @@ function checkMainWidgetElements(currentWidgetNameString, currentWidgetUrlString
   
   casper.test.assert(true, currentWidgetNameString  + ' widget is loaded!');
 
-  var filename = currentWidgetNameString + '.png';
-  casper.capture(filename);
+  //var filename = currentWidgetNameString + '.png';
+  //casper.capture(filename);
 
   //var currentWidgetUrl = casper.getCurrentUrl();
   //if (currentWidgetUrl == currentWidgetUrlString) {
