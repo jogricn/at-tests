@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "attesting =========",
   "main": "test-runner.js",
+  "license": "UNLICENSED",
   "dependencies": {
     "async": "2.4.0",
     "nodemailer": "4.0.1"
