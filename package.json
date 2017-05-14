@@ -6,7 +6,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "async": "2.4.0",
-    "nodemailer": "4.0.1"
+    "nodemailer": "4.0.1",
+	"mailer": "0.6.4"
   },
   "devDependencies": {
     "minimist": "1.2.0"
