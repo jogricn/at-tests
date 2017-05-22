@@ -53,7 +53,8 @@ if (testPath) {
     // REGRESION_TESTS_PATH + 'patient/RegisterUserTest.js',
     REGRESION_TESTS_PATH + 'polyclinic/ClinicsTests.js',
     REGRESION_TESTS_PATH + 'social_networks/SocialNetworksTests.js',
-    REGRESION_TESTS_PATH + 'widget/WidgetsTest.js'
+    REGRESION_TESTS_PATH + 'widget/WidgetsTest.js',
+	REGRESION_TESTS_PATH + 'search_control/SearchControlTest.js'
   ];
 }
 

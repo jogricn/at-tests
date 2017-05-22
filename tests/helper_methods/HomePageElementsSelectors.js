@@ -19,9 +19,9 @@ casper.HEADER_LOGO_SPAN_BLACK = "header .logo a span.logo-part-black";
 
 
 // SEARCH FORM ELEMENTS
-casper.MEDICAL_SPECIALTY_COMBO = ".cinema.picture-2 > form > div > div:nth-child(1) > select";
+casper.MEDICAL_SPECIALTY_COMBO = "form.search-box select[name='form[medical_specialty_id]']";
 casper.TOWN_OR_POSTCODE_TEXT_INPUT = "form.search-box input[name='form[location]']";
-casper.INSURANCE_COMBO = "html body.home div.container main section.cinema form.search-box div.text-input div select";
+casper.INSURANCE_COMBO = "form.search-box select[name='form[medical_specialty_id]']";
 casper.SEARCH_BUTTON = ".search-box button[type='submit']";
 
 
