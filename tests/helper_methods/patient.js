@@ -157,7 +157,7 @@ casper.logoutUser = function logoutUser() {
 /*
 * Populate Appointment form with Default user data
 */
-casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(doSubmit) {
+casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(doSubmit, send_sms, send_email) {
 	// Set gender on 'Herr'
   casper.click('#gender-2');
   
@@ -165,34 +165,41 @@ casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(do
   casper.fill('#booking-form', {
     'form[first_name]': 'Test-Thomas',
     'form[last_name]': 'Test-Hillard',
-    'form[email]': 'nebojsajogric+attesting@gmail.com',
-    'form[phone]': ''
+    'form[email]': 'testgroup@arzttermine.de',
+    'form[phone]': '+ 49 0 157 7737 8290'
   }, false);
-
+  
   casper.echo("    - In First name field type 'Test-Thomas'");
   casper.echo("    - In Last name field type 'Test-Hillard'");
   casper.echo("    - In Email field type 'testgroup@arzttermine.de'");
-
+  
+  if (send_sms) {
+	casper.echo("---> Click on the SMS checkbox to select it")
+    casper.click('#contact_preference_sms'); 
+  }
+  
+  casper.capture('1_1_FormFirstPagePopulated.png');
   casper.click('#booking-form #step-1 .button-wrapper button');
-  casper.echo("<<<--- CLIK ON WEITER BUTTON --->>>");
+  casper.echo("---> CLIK ON WEITER BUTTON");
 
   casper.wait(2000);
 
   var secondCombo = document.getElementsByClassName ("#filter-treatment");
   var selectedOption = 'Sonstige';
-  casper.echo("In 'Behandlungsgrund' box set 'Sonstige' value")
+  casper.echo("---> In 'Behandlungsgrund' box set 'Sonstige' value")
   secondCombo.value = selectedOption;
 
-  casper.echo("For 'Waren Sie bereits Patient/in bei Dr. Patrick Prinz?' click on 'Ja' radio button")
+  casper.echo("---> For 'Waren Sie bereits Patient/in bei Dr. Patrick Prinz?' click on 'Ja' radio button")
   casper.click('#is-patient-1')
 
-  casper.echo("Click on radio button 'I agree to my data being used to teach my appointment...'")
+  casper.echo("---> Click on radio button 'I agree to my data being used to teach my appointment...'")
   casper.click('#checkbox-tos');
-
+	
+  casper.capture('1_3_PRE-ZakazanTermin.png');
   if (doSubmit) {
     this.test.assertVisible('#step-2 .button-wrapper button[type="submit"]', 'Booking button is visible');
     casper.click('#step-2 .button-wrapper button[type="submit"]');
-    casper.echo("<<<--- CLIK ON 'Termin buchen!' BUTTON --->>>");
+    casper.echo("---> CLIK ON 'Termin buchen!' BUTTON");
     casper.wait(3000, function() {
       casper.test.assertDoesntExist('.error', 'Ther is no errors.')  
     })
