@@ -46,8 +46,10 @@ if (testPath) {
     SMOKE_TESTS_PATH + 'searchpager.js',
     // SMOKE_TESTS_PATH + 'telefondienst.js',
     
+	REGRESION_TESTS_PATH + 'search_control/SearchControlTest.js',
     REGRESION_TESTS_PATH + 'doctor/DoctorTests.js',
-    REGRESION_TESTS_PATH + 'doctor/RegistrationDoctorTests.js',
+	//REGRESION_TESTS_PATH + 'doctor/RegistrationDoctorTests.js',
+    REGRESION_TESTS_PATH + 'doctor/RegistrationFormValidationTests.js',
     // REGRESION_TESTS_PATH + 'patient/UserTests.js',
     REGRESION_TESTS_PATH + 'patient/UserAppointmentsTests.js',
     // REGRESION_TESTS_PATH + 'patient/RegisterUserTest.js',
