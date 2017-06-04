@@ -178,7 +178,6 @@ casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(do
     casper.click('#contact_preference_sms'); 
   }
   
-  casper.capture('1_1_FormFirstPagePopulated.png');
   casper.click('#booking-form #step-1 .button-wrapper button');
   casper.echo("---> CLIK ON WEITER BUTTON");
 
@@ -195,7 +194,6 @@ casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(do
   casper.echo("---> Click on radio button 'I agree to my data being used to teach my appointment...'")
   casper.click('#checkbox-tos');
 	
-  casper.capture('1_3_PRE-ZakazanTermin.png');
   if (doSubmit) {
     this.test.assertVisible('#step-2 .button-wrapper button[type="submit"]', 'Booking button is visible');
     casper.click('#step-2 .button-wrapper button[type="submit"]');
@@ -210,9 +208,9 @@ casper.fillAppointmentFormWithSubmit = function fillAppointmentFormWithSubmit(do
 doSearchDoctors = function doSearchDoctors(specialty, town, insurance) {
   var specialtyComboSelector = casper.MEDICAL_SPECIALTY_COMBO;
   var specialtyValue = specialty;
-  casper.echo("VREDNOSTI SU : " + specialtyComboSelector + " -  a vrednost za selector je : " + specialtyValue);
+  casper.echo("Values are : " + specialtyComboSelector + " -  and value for selector is : " + specialtyValue);
   casper.evaluate(function() {
-    casper.echo("VREDNOSTI SU : " + specialtyComboSelector + " -  a vrednost za selector je : " + specialtyValue);
+    casper.echo("Values are  : " + specialtyComboSelector + " -  and value for selector is : " + specialtyValue);
     setComboBoxVaue(specialtyComboSelector, specialtyValue)
   })
   //casper.evaluate(setComboBoxVaue(specialtyComboSelector, specialtyValue));

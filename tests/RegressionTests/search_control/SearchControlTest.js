@@ -155,7 +155,7 @@ casper.test.begin("Home page Search tests", function suite(test){
   
 
   casper.then(function() {
-    test.assertVisible('#providers', 'Providetr HTML element is visible on the results page.')
+    test.assertVisible('#providers', 'Provide HTML element is visible on the results page.')
   });
 
   casper.then(function() {
@@ -182,7 +182,7 @@ casper.test.begin("Home page Search tests", function suite(test){
   
   casper.then(function(){
 	this.click("#filter-specialty");
-	casper.echo("--->  Click on the insurance type combo box");
+	casper.echo("--->  Click on the specialty combo box");
 	this.evaluate(function() {
 		var form = document.querySelector("#filter-specialty");
 		form.selectedIndex = 4;
