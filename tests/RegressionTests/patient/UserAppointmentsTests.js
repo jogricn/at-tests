@@ -23,16 +23,7 @@ SECUND_APPOINTMENT = "#upcoming_bookings_container > table:nth-child(2) > tbody:
 * 	Open Dr. Jürgen Ranft, M.Sc. page and make appointment for first available term
 */
 casper.test.begin("Test - Make an appointment - Dr. Jürgen Ranft, M.Sc.", function suite(test){
-  
-	function check_appointment_confirmation_mail() {
-		
-		// MD5 Hash of 'arzttermine@binka.me' email address
-        email_hash = "0fc7b6a89af496a59e4e4992ff378531";
-        web_url = "http://api.temp-mail.ru/request/mail/id/" + email_hash + "/format/json/";
-		
-		
-	}
-	
+  	
     casper.start().viewport(1200, 1000).thenOpen('https://arzttermine.de/arzt/dr-juergen-ranft-msc', function(){
 		casper.echo("---> Open 'Dr. Jürgen Ranft, M.Sc.' page URL https://arzttermine.de/arzt/dr-juergen-ranft-msc")
 		test.assertTitle("Dr. Jürgen Ranft, M.Sc., Zahnarzt in Berlin, Termin buchen | Arzttermine.de", 
@@ -57,7 +48,7 @@ casper.test.begin("Test - Make an appointment - Dr. Jürgen Ranft, M.Sc.", funct
 		//  - boolean - Submit form
 		//  - boolean - Send sms
 		//  - boolean - Send email
-		casper.fillAppointmentFormWithSubmit(true, false, true);
+		casper.fillAppointmentFormWithSubmit(false, false, true);
 	});
 	
 	casper.waitForText('Das sind die nächsten Schritte', function() {
@@ -98,7 +89,6 @@ casper.test.begin("Check doctor evaluation page Test", function suite(test){
     });
 
     casper.then(function() {
-		casper.capture('3_1_redirektovana_rating.png');
 		
 		// Check Address section elements
 		test.assertVisible('#info-block .doctor .info .address ', 'Doctor address container is visible on the valuation page');
@@ -133,6 +123,46 @@ casper.test.begin("Check doctor evaluation page Test", function suite(test){
     test.done();
   });
 });
+
+/*
+*
+* TEST DESCRIPTION
+*
+*/
+casper.test.begin("Check booking email Test", function suite(test){
+    
+	function check_appointment_confirmation_mail() {
+		
+		
+		
+		var json_string = JSON.parse(web_url);
+		require('utils').dump(json_string);
+		
+	}
+	// MD5 Hash of 'arzttermine@binka.me' email address
+    email_hash = "0fc7b6a89af496a59e4e4992ff378531";
+    web_url = "http://api.temp-mail.ru/request/mail/id/" + email_hash + "/format/json/";
+ 
+    casper.start().viewport(1200, 1000).thenOpen(web_url, function(){
+		
+    });
+
+    casper.then(function() {
+		casper.capture('email_page.png');
+		var currentURL = this.getCurrentUrl();
+		this.echo('URL: ' + currentURL);
+		var json_string = JSON.parse(this.getPageContent());
+		require('utils').dump(json_string);
+		
+	
+    });
+
+
+  casper.run(function() {
+    test.done();
+  });
+});
+
 
 
 
