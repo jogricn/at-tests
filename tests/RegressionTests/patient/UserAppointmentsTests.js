@@ -15,7 +15,7 @@ var FIRST_DOCTOR_NAME_LINK = '#providers section.result header .title h2.name sp
 FIRST_APPOINTMENT = "#upcoming_bookings_container > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(5) > input.btn_gray_new:nth-child(1)";
 SECUND_APPOINTMENT = "#upcoming_bookings_container > table:nth-child(2) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(5) > input:nth-child(1)";
 
-
+var is_term_booked = false;
 /*
 * --- TEST ---
 *
@@ -64,10 +64,10 @@ casper.test.begin("Test - Make an appointment - Dr. Jürgen Ranft, M.Sc.", funct
 		test.assertVisible('#info-block .doctor', 'Doctor details section is visible.');
 		test.assertVisible('#info-block .doctor .photo [alt="Dr. Jürgen Ranft, M.Sc."]', 'Doctor photo is displayed in details section.');
 		test.assertVisible('#info-block .doctor .info', 'Doctor info is displayed in details section.');
-		
+		is_term_booked = true;
 		
 	});
-
+	
     casper.run(function() {
 	    test.done();
     });
@@ -82,8 +82,14 @@ casper.test.begin("Test - Make an appointment - Dr. Jürgen Ranft, M.Sc.", funct
 */
 casper.test.begin("Check doctor evaluation page Test", function suite(test){
     
-	var EVALUATION_PAGE_URL = APPOINTMENT_BOOKING_URL.replace('buchung', 'bewertung');
- 
+	if (!is_term_booked){
+		casper.echo("Term is not booked, this test will be skipped!");
+		test.done();
+	}
+	else {
+		var EVALUATION_PAGE_URL = APPOINTMENT_BOOKING_URL.replace('buchung', 'bewertung');
+	}
+	
     casper.start().viewport(1200, 1000).thenOpen(EVALUATION_PAGE_URL, function(){
 		test.assertVisible('#info-block .doctor .info .name', 'Doctor name is visible on the valuation page');
     });
@@ -123,47 +129,6 @@ casper.test.begin("Check doctor evaluation page Test", function suite(test){
     test.done();
   });
 });
-
-/*
-*
-* TEST DESCRIPTION
-*
-*/
-casper.test.begin("Check booking email Test", function suite(test){
-    
-	function check_appointment_confirmation_mail() {
-		
-		
-		
-		var json_string = JSON.parse(web_url);
-		require('utils').dump(json_string);
-		
-	}
-	// MD5 Hash of 'arzttermine@binka.me' email address
-    email_hash = "0fc7b6a89af496a59e4e4992ff378531";
-    web_url = "http://api.temp-mail.ru/request/mail/id/" + email_hash + "/format/json/";
- 
-    casper.start().viewport(1200, 1000).thenOpen(web_url, function(){
-		
-    });
-
-    casper.then(function() {
-		casper.capture('email_page.png');
-		var currentURL = this.getCurrentUrl();
-		this.echo('URL: ' + currentURL);
-		var json_string = JSON.parse(this.getPageContent());
-		require('utils').dump(json_string);
-		
-	
-    });
-
-
-  casper.run(function() {
-    test.done();
-  });
-});
-
-
 
 
 /*
@@ -222,6 +187,11 @@ casper.test.begin("Check booking email Test", function suite(test){
 */
 casper.test.begin("Test - Booking form validation", function suite(test){
   
+	if (!is_term_booked){
+		casper.echo("Term is not booked, this test will be skipped!");
+		test.done();
+	}
+	
     // Get name of first doctor
     function getSelectedDoctorName () {
 		var doctorName = document.querySelectorAll('section.result:nth-child(1) > div:nth-child(1) > header:nth-child(1) > div:nth-child(2) > h2:nth-child(1) > span:nth-child(1) > a:nth-child(1)');
