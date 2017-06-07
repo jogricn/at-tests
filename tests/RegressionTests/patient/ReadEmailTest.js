@@ -39,7 +39,7 @@ casper.test.begin("Check booking email Test", function suite(test){
 			is_inbox_empty = false;
 			casper.echo("Inbox is not empty !!!!!!!!!!");
 		}
-		casper.wait(10000);
+		casper.wait(1000);
 
 		if (is_inbox_empty) {
 			casper.echo("*** SAD CE RELOAAAD");
@@ -75,7 +75,7 @@ casper.test.begin("Check booking email Test", function suite(test){
 				
 				//"Arzttermine.de <buchung@arzttermine.de>"
 			}
-			casper.wait(10000);			
+			casper.wait(1000);			
 		}
 		test.assert(is_received, 'Booking mail received!!!');		
 

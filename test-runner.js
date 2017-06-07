@@ -1,7 +1,17 @@
 var async = require("async");
 var fs = require('fs');
 var nodemailer = require("nodemailer");
-//var transport = nodemailer.createTransport("direct"); - commented temporarily
+var transport = nodemailer.createTransport("direct");
+
+// create reusable transport method (opens pool of SMTP connections)
+//var transport = nodemailer.createTransport("SMTP",{
+  //  service: "Gmail",
+    //auth: {
+      //  user: "nebojsajogric@gmail.com",
+        //pass: "KvarnoD0B0la#"
+    //}
+///});
+
 //var sys = require('util');
 var spawn = require('child_process').spawn;
 var parseArgs = require('minimist');
@@ -164,7 +174,7 @@ var report = function(filename, isFail, callback) {
 // Sends email
 var sendMail = function(subject, atts, text) {
   transport.sendMail({
-      from: "Testing <testing@arzttermine.com>",
+      from: "Testing NJ <nebojsajogric@gmail.com>",
       to: recepients,
       subject: subject, 
       attachments: atts,
@@ -221,7 +231,7 @@ async.each(
   }, 
   function(err){
     // When all tests finish, generate a report.
-    // report();
+    report();
 
     if (err) {
       console.error("FAILURE: " + err);
