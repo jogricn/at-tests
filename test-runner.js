@@ -10,7 +10,7 @@ var transport = nodemailer.createTransport("direct");
       //  user: "nebojsajogric@gmail.com",
         //pass: "KvarnoD0B0la#"
     //}
-///});
+//});
 
 //var sys = require('util');
 var spawn = require('child_process').spawn;
