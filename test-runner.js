@@ -1,7 +1,10 @@
 var async = require("async");
 var fs = require('fs');
-var nodemailer = require("nodemailer");
-var transport = nodemailer.createTransport("direct");
+var nodemailer = require('nodemailer');
+var directTransport = require('nodemailer-direct-transport');
+var options = {};
+var transport = nodemailer.createTransport(directTransport(options))
+//var transport = nodemailer.createTransport("direct");
 
 // create reusable transport method (opens pool of SMTP connections)
 //var transport = nodemailer.createTransport("SMTP",{
@@ -174,7 +177,7 @@ var report = function(filename, isFail, callback) {
 // Sends email
 var sendMail = function(subject, atts, text) {
   transport.sendMail({
-      from: "Testing NJ <nebojsajogric@gmail.com>",
+      from: "Nebojsa Jogric <nebojsajogric@gmail.com>",
       to: recepients,
       subject: subject, 
       attachments: atts,
