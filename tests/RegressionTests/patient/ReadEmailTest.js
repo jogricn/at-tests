@@ -10,7 +10,7 @@ require('./../../helper_methods/doctors.js');
 casper.test.begin("Check booking email Test", function suite(test){
     
 	// Mail service URL: https://temp-mail.ru/en/
-	// Service API doc: http://api.temp-mail.ru/
+	// Service API doc: https://temp-mail.ru/en/api/
 	
 	// MD5 Hash of 'arzttermine@binka.me' email address
     email_hash = "0fc7b6a89af496a59e4e4992ff378531";
