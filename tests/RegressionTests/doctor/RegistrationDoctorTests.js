@@ -47,8 +47,7 @@ casper.test.begin("Doctor registration tests", function suite(test){
 		// Set gender on 'Herr'
 		casper.click('#gender #gender-2');
 		casper.echo("    - Click on the Herr radio button");
-		this.capture("regForma.png");
-		
+
 		// Fill form elements (First name, Last name, email address, phone number)
 		casper.fill('#booking-form', {
 			'title': 'TestDr',
@@ -63,8 +62,7 @@ casper.test.begin("Doctor registration tests", function suite(test){
 		casper.echo("    - In Last name field type 'Test-Hillard'");
 		casper.echo("    - In Email field type 'testgroup@arzttermine.de'");
 		casper.echo("    - In phone field type '+ 49 0 157 7737 8290'");
-		
-		this.capture("registracija.png");
+
     });
 	
 	casper.thenClick('#booking-form .button-wrapper button', function() {
@@ -73,8 +71,7 @@ casper.test.begin("Doctor registration tests", function suite(test){
 		  casper.test.assertDoesntExist('.error', 'Ther is no errors.')  
 		});
 		casper.wait(4000);
-		
-		this.capture("RegDoctor.png");
+
 	});
 
     casper.waitForText('Sie haben sich erfolgreich registriert!', function() {
@@ -104,8 +101,7 @@ casper.test.begin("Doctor registration tests", function suite(test){
 		casper.echo("    - In Practice Name field type 'TestPractice'");
 		casper.echo("    - In City field type 'Berlin'");
 		casper.echo("    - In Phone Mobile field type '+ 49 0 157 7737 8290'");
-		
-		this.capture("DrDetails1.png");
+
 	});
 	
 	// Combo name=medical_specialty_id
@@ -118,8 +114,6 @@ casper.test.begin("Doctor registration tests", function suite(test){
 			$(form).change();
 			casper.echo("---> In medical_specialty combo, chose first value. Should be 'Zahnarzt'");
 		});
-		
-		this.capture("DrDetails1-combo.png");
 	});
 	
 	
@@ -150,8 +144,6 @@ casper.test.begin("Doctor registration tests", function suite(test){
 		
 		casper.waitForText("bessere Google Suchergebnisse");
 		test.assert(true, "Text 'bessere Google Suchergebnisse' for radio button is displayed");
-		
-		this.capture("DrDetails2.png");
 	});
 	
 	// Combo name=doctors_count
@@ -164,7 +156,6 @@ casper.test.begin("Doctor registration tests", function suite(test){
 			$(form).change();
 			casper.echo("---> In Doctors Count combo, chose first value. Should be '2'");
 		});
-		this.capture("DrDetails2-combo.png");
 	});
 	
 	casper.thenClick('#booking-form .button-wrapper button', function() {
