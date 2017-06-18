@@ -19,7 +19,7 @@ casper.test.begin("Doctor registration tests", function suite(test){
 		
 		var day = this.evaluate(getCurrentDay);
 		
-		if (day == 1) {
+		if (day != 1) {
 			casper.echo("### Test runs every 1st in a month ###");
 			casper.echo("### Today is : " + day);
 			casper.echo("### Skip test ###");
