@@ -4,16 +4,6 @@ var nodemailer = require('nodemailer');
 var directTransport = require('nodemailer-direct-transport');
 var options = {};
 var transport = nodemailer.createTransport(directTransport(options))
-//var transport = nodemailer.createTransport("direct");
-
-// create reusable transport method (opens pool of SMTP connections)
-//var transport = nodemailer.createTransport("SMTP",{
-  //  service: "Gmail",
-    //auth: {
-      //  user: "nebojsajogric@gmail.com",
-        //pass: "KvarnoD0B0la#"
-    //}
-//});
 
 //var sys = require('util');
 var spawn = require('child_process').spawn;

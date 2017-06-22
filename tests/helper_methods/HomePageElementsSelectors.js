@@ -14,6 +14,8 @@ casper.HEADER_LOGO_SPAN_WHITE = "header .logo a span.logo-part-white";
 casper.HEADER_LOGO_SPAN_BLUE = "header .logo a span.logo-part-blue";
 casper.HEADER_LOGO_SPAN_BLACK = "header .logo a span.logo-part-black";
 
+casper.HEADER_TEL_LINK = ".phone-container > span:nth-child(1) > a:nth-child(1)";
+
 
 
 
